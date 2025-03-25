@@ -1,0 +1,44 @@
+*{
+    margin: 0 0 0 20px;
+    background-color: bisque;
+    box-sizing: border-box;
+}
+.top, .top>h1, .top>a{
+    display: flex;
+    margin-top: 20px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color: blue;
+    border: 1px solid blue;
+}
+.desc-wrapper img{
+    width: 400px;
+    height: auto;
+    
+}
+.desc-wrapper{
+    display: flex;
+}
+.indesc, .indesc p {
+    width: 500px;
+    margin-left: 2px;
+}
+
+.desc{
+    font-size: 20px;
+    font-weight: 700;
+}
+.desc.fontb{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.list{
+    font-size: 30px;
+    color:blue;
+
+}
+.list.list2{
+    color:red
+}

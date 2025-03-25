@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>// Pobiera wszystkie właściwości CSS dostępne w JS
+        const styles = Object.keys(document.body.style);
+        
+        // Tworzy kontener główny
+        const mainContainer = document.createElement("div");
+        mainContainer.style.fontFamily = "Arial, sans-serif";
+        mainContainer.style.display = "flex";
+        mainContainer.style.flexWrap = "wrap";
+        mainContainer.style.justifyContent = "start";
+        mainContainer.style.alignItems = "flex-start";
+        mainContainer.style.gap = "20px";
+        mainContainer.style.padding = "20px";
+        mainContainer.style.background = "#f4f4f4";
+        mainContainer.style.flexDirection = "row"; // Poziomo!
+        
+        // Funkcja do przypisywania przykładowych wartości
+        function applyExampleStyle(property, element) {
+            try {
+                if (property.includes("color")) element.style[property] = "red";
+                else if (property.includes("width")) element.style[property] = "120px";
+                else if (property.includes("height")) element.style[property] = "60px";
+                else if (property.includes("margin")) element.style[property] = "10px";
+                else if (property.includes("padding")) element.style[property] = "5px";
+                else if (property.includes("border")) element.style[property] = "2px dashed blue";
+                else if (property.includes("outline")) element.style[property] = "3px solid purple"; // OUTLINE TERAZ TU!
+                else if (property.includes("font")) element.style[property] = "italic bold 16px Arial";
+                else if (property.includes("text")) element.style[property] = "uppercase";
+                else if (property.includes("background")) element.style[property] = "lightblue";
+                else if (property.includes("display")) element.style[property] = "block";
+                else if (property.includes("align")) element.style[property] = "center";
+            } catch (error) {
+                console.warn(`Nie można ustawić ${property}:`, error);
+            }
+        }
+        
+        // Grupowanie właściwości CSS
+        const groupedProperties = {
+            "Kolory": [],
+            "Tekst": [],
+            "Obramowanie": [],
+            "Odstępy": [],
+            "Rozmiary": [],
+            "Tło": [],
+            "Układ": [],
+            "Inne": [],
+            "Webkit": [] // Dodana kategoria Webkit
+        };
+        
+        // Sortowanie właściwości
+        styles.forEach((property) => {
+            if (property.startsWith("webkit")) groupedProperties["Webkit"].push(property);
+            else if (property.includes("color")) groupedProperties["Kolory"].push(property);
+            else if (property.includes("text") || property.includes("font")) groupedProperties["Tekst"].push(property);
+            else if (property.includes("border") || property.includes("outline")) groupedProperties["Obramowanie"].push(property);
+            else if (property.includes("margin") || property.includes("padding")) groupedProperties["Odstępy"].push(property);
+            else if (/width|height|size|Height|Width/.test(property)) groupedProperties["Rozmiary"].push(property);
+            else if (property.includes("width") || property.includes("height") || property.includes("size")) groupedProperties["Rozmiary"].push(property);
+            else if (property.includes("background")) groupedProperties["Tło"].push(property);
+            else if (property.includes("display") || property.includes("align") || property.includes("grid") || property.includes("flex")) groupedProperties["Układ"].push(property);
+            else groupedProperties["Inne"].push(property);
+        });
+        
+        // Tworzenie kontenerów dla grup
+        Object.entries(groupedProperties).forEach(([category, properties]) => {
+            if (category === "Inne" || category === "Webkit") return;
+        
+            const categoryDiv = document.createElement("div");
+            categoryDiv.style.border = "2px solid black";
+            categoryDiv.style.padding = "10px";
+            categoryDiv.style.background = "#ddd";
+            categoryDiv.style.minWidth = "250px";
+            categoryDiv.style.flexGrow = "1";
+            categoryDiv.style.textAlign = "center";
+        
+            // Nagłówek kategorii
+            const header = document.createElement("h3");
+            header.textContent = category;
+            categoryDiv.appendChild(header);
+        
+            // Dodajemy właściwości CSS do kategorii
+            properties.forEach((prop) => {
+                const propertyDiv = document.createElement("div");
+                propertyDiv.textContent = prop;
+                propertyDiv.style.border = "1px solid #ccc";
+                propertyDiv.style.margin = "5px";
+                propertyDiv.style.padding = "10px";
+                propertyDiv.style.display = "inline-block";
+                propertyDiv.style.background = "#fff";
+                propertyDiv.style.textAlign = "center";
+                propertyDiv.style.width = "180px";
+        
+                applyExampleStyle(prop, propertyDiv);
+        
+                categoryDiv.appendChild(propertyDiv);
+            });
+        
+            mainContainer.appendChild(categoryDiv);
+        });
+        
+        // Dodanie sekcji „Inne” i „Webkit” na końcu
+        ["Inne", "Webkit"].forEach((category) => {
+            const categoryDiv = document.createElement("div");
+            categoryDiv.style.border = "2px solid black";
+            categoryDiv.style.padding = "10px";
+            categoryDiv.style.background = "#ddd";
+            categoryDiv.style.minWidth = "250px";
+            categoryDiv.style.flexGrow = "1";
+            categoryDiv.style.textAlign = "center";
+        
+            const header = document.createElement("h3");
+            header.textContent = category;
+            categoryDiv.appendChild(header);
+        
+            groupedProperties[category].forEach((prop) => {
+                const propertyDiv = document.createElement("div");
+                propertyDiv.textContent = prop;
+                propertyDiv.style.border = "1px solid #ccc";
+                propertyDiv.style.margin = "5px";
+                propertyDiv.style.padding = "10px";
+                propertyDiv.style.display = "inline-block";
+                propertyDiv.style.background = "#fff";
+                propertyDiv.style.textAlign = "center";
+                propertyDiv.style.width = "180px";
+        
+                applyExampleStyle(prop, propertyDiv);
+        
+                categoryDiv.appendChild(propertyDiv);
+            });
+        
+            mainContainer.appendChild(categoryDiv);
+        });
+        
+        // Czyści stronę i dodaje kontener do body
+        document.body.innerHTML = "";
+        document.body.appendChild(mainContainer);
+        
+    </script>
+</body>
+</html>
