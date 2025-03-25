@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">rock</button>
+    <button class="btn">paper</button>
+    <button class="btn">scissors</button>
+    <button class="restart">RESET</button>
+<div class="score">
+</div>
+<div class="result"></div>
+    <script>
+
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+function getComputerChoice(){
+    const rps = ["rock","paper","scissors"]
+    let choice = Math.floor(Math.random()*3)
+    console.log("bot: "+rps[choice])
+    return rps[choice]
+
+}
+
+function playRound(humanChoice, computerChoice){
+    const result = document.querySelector(".result")
+    const score = document.querySelector(".score")
+
+    if((humanChoice== "rock" && computerChoice=="scissors") || (humanChoice== "scissors" && computerChoice=="paper") || (humanChoice== "paper" && computerChoice=="rock")){
+        result.textContent=`You won! ${humanChoice} beat ${computerChoice}`
+        humanScore+=1
+    }else if( humanChoice==computerChoice){
+        result.textContent="Tie! 0 points"
+    }
+    else{
+        result.textContent=`You lost! ${computerChoice} beat ${humanChoice}`
+        computerScore+=1
+    }
+    console.log(`wynik: You ${humanScore}:${computerScore} Bot`)
+    score.textContent=`Ty ${humanScore}:${computerScore} Bot`
+
+}
+const restart = document.querySelector(".restart")
+restart.addEventListener("click", () =>{
+    humanScore = 0;
+    computerScore = 0;
+    document.querySelector(".result").textContent = ""
+    document.querySelector(".score").textContent = ""
+})
+    
+const btn = document.querySelectorAll(".btn")
+btn.forEach(button =>{
+    button.addEventListener("click", () => playRound(button.textContent,getComputerChoice()))
+    
+})
+
+
+
+    </script>
+</body>
+</html>
