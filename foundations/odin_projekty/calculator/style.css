@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    color: white
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    background-image: url('./bg/bg.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+
+.calc{
+width: 400px;
+margin: auto;
+margin-top: 40px;
+}
+.half-circle, .top, .display-wrapper, .buttons-wrapper, .half-circle2{
+    background-color: #3f3f3f;
+}
+.half-circle, .half-circle2{
+    height: 20px;
+    width: 400px;
+    background-color: #3f3f3f;
+}
+.half-circle{
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+.half-circle2{
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+}
+.top{
+    height: 80px;
+    display: flex;
+}
+.electronic{
+    font-size:12px;
+}
+.top-left,.top-right{
+    margin: auto;
+    text-align: center;
+}
+.solar-wrapper{
+    height: 40px;
+    display: flex;
+    width: 150px;
+    background-color: black;
+    border-radius: 10px;
+
+}
+.solar{
+    flex: 1;
+    border-right: 1px solid white;
+    
+}
+.solar:last-child{
+    border-right: 0px;
+}
+.display-wrapper{
+    height: 100px;
+    display: flex;
+
+}
+.display-outline{
+    display: flex;
+    width: 360px;
+    height: 80px;
+    margin: auto;
+    background-color: #4a4a4a;
+    border-radius: 50px;
+    border: 1px solid gray;
+    
+}
+.display{
+    width: 300px;
+    height: 60px;
+    background-color: green;
+    margin: auto;
+    border:5px solid gray;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: right;
+    align-items: center;    
+    font-size: 3em;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+}
+.buttons-wrapper{
+    height: 400px;
+    padding: 20px 40px;
+}
+#on{
+    border-bottom: 1px solid white;
+}
+.power-btn{
+    background-color: cyan;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.upper-buttons,.memory-buttons{
+    display: flex;
+}
+.upper-buttons{
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.memory-buttons{
+    width: 100%;
+    text-align: center;
+}
+.memory{
+    flex: 1;
+}
+
+.memory-btn{
+    background-color: yellow;
+    width: 60%;
+    height: 20px;
+    border-radius: 25px;
+}
+.bottom-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.bottom-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.bottom-buttons2{
+    width: 237.5px;
+}
+.btn{
+    flex: 1 1 calc(25% - 10px);
+    height: 50px;
+    background-color: #404040;
+    font-size: 1.5em;
+    border-radius: 19px;
+}
+.btn2{
+    flex: 1 1 calc(33.33% - 10px);
+    height: 50px;
+}
+.btn-add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    height: 110px; 
+    flex: 0 0 72.5px;
+}
+.btn-add button {
+    width: 100%;
+    height: 100%;
+    background-color: cyan;
+    font-size: 4em
+}
+
+
+
+/* usuwanie strzałek */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* usuwanie strzałek: firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* pasek boczny */
+.aside-container{
+    position: absolute;
+    min-height: 700px;
+    width: 300px;
+    left: -250px;
+    top: 0;
+    display: flex;
+    transition: left 0.6s ease-in-out;
+}
+.aside{
+    background-color: rgb(24, 24, 29);
+    width: 250px;
+    border-radius: 0px 0px 20px 0px;
+    text-align: center;
+
+}
+.aside h1{
+    margin: 10px;
+}
+.aside img{
+    width: 150px;
+    margin-top: 25px;
+
+}
+.aside img:hover{
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+
+}
+.aside-btn{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(24, 24, 29);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+
+
+}
