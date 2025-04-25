@@ -1,0 +1,17 @@
+.container{
+    background-color: rgb(201, 218, 232);
+    width: 50%;
+    height: 400px;
+    margin: auto;
+}
+.formflex{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+#dodaj{
+    width: 150px;
+    padding: 10px 5px;
+    border-radius: 10px;
+}

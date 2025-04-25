@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="konstruktorBook.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BIBLIOTEKA - dodaj książke</h1>
+        </div>
+        <div class="form">
+            <form action="" method="post">
+                <div class="formflex">
+                <label for="title">title 
+                    <input type="text" name="title" id="f-title">
+                </label>
+                <label for="author">author 
+                    <input type="text" name="auhor" id="f-author">
+                </label>
+                <label for="pages">pages 
+                    <input type="number" name="pages" id="f-pages">
+                </label>
+                <label for="read">read? 
+                    <select name="read" id="f-read">
+                        <option value="no">not read yet</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </label>
+                <button id="dodaj">DODAJ</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="library">
+        <ul class="library-list">
+
+        </ul>
+
+    </div>
+    <script src="konstruktorBook.js"></script>
+</body>
+</html>

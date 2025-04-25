@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --create-account: #596D48;
+    --input-border: #E5E7EB;
+    --valid-input: red;
+    --input-focus: lightblue;
+}
+@font-face {
+    font-family: MyFont;
+    src: url(Norse-Bold.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+html, body {
+    height: 100%;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.left{
+    background-color: blue;
+    flex: 1;
+    flex-shrink: 0;
+    background-image: url(./photo-1585202900225-6d3ac20a6962.avif);
+    background-size: cover;
+    }
+    .box{
+        display:flex;
+        justify-content: center;
+        margin-top: 30%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 0;   }
+
+        .box img{
+            max-width: 100px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    .text{
+        color: white;
+        font-family: MyFont;
+        font-size: clamp(2rem, 10vw, 7em);
+
+    }
+    .footer{
+        color: white;
+        text-align: center;
+        margin-top: 100%;
+  }
+.right{
+    background-color: white;
+    flex: 2;
+    padding: 8% 2%;
+}
+.right h2{
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 4vw, 2rem);
+}
+.form-wrapper{
+    display: flex;
+    gap: 2rem;
+    margin-right: 35%;
+    flex-wrap: wrap;
+}
+.form-l,.form-r{
+    flex: 1;
+
+}
+.form-container{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin-bottom: 3%;
+    margin-top: 5%;
+}
+.form{
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    color:pink;
+    margin-bottom: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(145, 145, 144);
+}
+.form input{
+    height: 2.3rem;
+    width: 100%;
+}
+input:focus {
+    border: 4px solid var(--input-focus);
+    outline: none;
+}
+
+
+form input:valid {
+    border: 4px solid green;
+}
+legend{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+.account{
+    flex-basis: 100%;
+}
+.submit{
+    background-color: var(--create-account);
+    color: white;
+    width: 20%;
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 0;
+    margin-bottom: 3rem;
+
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+
+}
+.submit:hover, .submit:focus{
+    background-color: white;
+    border: 1px solid var(--create-account);
+    color: var(--create-account);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.9);
+    
+}
+.account p{
+    font-size: 1.2rem;
+    
+}
+.account a{
+    color: var(--create-account);
+    text-decoration: none;
+    font-weight: bold;
+}

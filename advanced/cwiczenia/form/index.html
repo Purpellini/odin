@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="left">
+            <div class="box">
+                <img src="./odin-lined.png" alt="">
+                <div class="text">ODIN</div>
+            </div>
+            <div class="footer">Photo by nobody</div>
+        </div>
+        <div class="right">
+            <h2>This is not a real online service! you know you need something like this in your life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</h2>
+            <h2>You <i>know</i> you want to</h2>
+            <div class="form-container">
+                <form action="" method="post">
+                    <legend>Let's do this!</legend>
+                    <div class="form-wrapper">
+                    <div class="form-l">
+                    <p class="form form-left">
+                        <label for="first_name">FIRST NAME</label>
+                        <input type="text" name="first_name" id="first_name" required>
+                    </p>
+                    <p class="form form-left">
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p class="form form-left">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="password" id="password" minlength="5" required>
+                    </div>
+                    <div class="form-r">
+                        <p class="form form-right">
+                            <label for="last_name">LAST NAME</label>
+                            <input type="text" name="last_name" id="last_name" required >
+                        </p>
+                        <p class="form form-right">
+                            <label for="phone_number">PHONE NUMBER</label> 
+                            <input type="tel" name="phone_number" id="phone_number" pattern="[0-9]{9,12}" required>
+                        </p>
+                        <p class="form form-right">
+                            <label for="confirm_password">CONFIRM PASSWORD</label>
+                            <input type="password"  minlength="5" name="confirm_password" id="confirm_password" required>
+                            
+                    </div>
+                </div>
+            </div>
+                    <div class="account">
+                        <input type="submit" value="Create account" class="submit">
+                        <p>Already have an account? <a href="">Log in</a></p>
+                    </div>
+
+                </form>
+
+
+        </div>
+       
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
